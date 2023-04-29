@@ -1,0 +1,16 @@
+{
+    "categories":[
+        {
+            "name":"languages",
+            "items":["JavaScript","TypeScript","HTML","CSS","Java","Python","C#","SQL"]
+        },
+        {
+            "name":"frameworks/libraries",
+            "items":["React, React Native, Bootstrap, .NET Framework, Jest, JUnit, JavaFX/FXML"]
+        },
+        {
+            "name":"tools",
+            "items":["Git/GitHub, Visual Studio Code, Visual Studios, MySQL"]
+        }
+    ]
+}

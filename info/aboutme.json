@@ -1,0 +1,24 @@
+{
+    "categories":[
+        {
+            "name":"Education",
+            "description":"I am pursuing a B.S in Computer Science and a B.A in Piano Performance at Oakland University. This is a unique combination, and while it is a lot of work, I am extremely proud of what I have accomplished in both disciplines. My current GPA is 3.95, and I expect to graduate in 2025.",
+            "assets":[]
+        },
+        {
+            "name":"Music",
+            "description":"Music has always been a huge part of my life. My main focus has been classical piano performance, but I have explored other genres such as Jazz, Latin, and Carribean music, and have played other instruments such as the Saxophone, Vibraphone, and others. \nBeing a musician teaches one not only to play music well, but other aspects of life. Discipline, communication, attention to detail, and professionalism are just a few vital skills that music has taught me",
+            "assets":[]
+        },
+        {
+            "name":"Hobbies",
+            "description":"I believe that to live life to the fullest, one must explore all paths which bring meaning into their lives. I am always picking up new hobbies, such as Chess, Competitive Rubik's Cube Solving, Running, and others. I have also taken leadership roles by running and creating clubs at Oakland University for each of these activities, which brings likeminded people together that could not happen otherwise.",
+            "assets":[]
+        },
+        {
+            "name":"Volunteer Work",
+            "description":"Our family has been fostering litters of kittens since 2018 through the Rejoyceful Animal Rescue. While it may seem easy and fun getting to take care of kittens, it is a lot of work to ensure that they stay healthy. It is extremely rewarding and worth the work to raise a kitten to be old enough to be adopted to a home knowing that it will be happy and healthy.",
+            "assets":[]
+        }
+    ]
+}
