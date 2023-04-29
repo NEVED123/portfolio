@@ -1,24 +1,25 @@
-{
+{   
+    "root":"assets/projects",
     "categories":[
         {
             "name":"Portfolio",
             "description":"Creating this website to showcase my skills as a developer. Will require thorough knowledge of HTML, CSS, and JavaScript, frameworks such as Sass, and Figma for UI design.",
-            "assets":[]
+            "assets":"portfolio"
         },
         {
             "name":"Pulse+",
             "description":"Developed a mobile app for Android and iOS using React Native and Typescript that enables musicians to practice tuning and rhythm, and to create custom presets for specific songs.",
-            "assets":[]
+            "assets":"pulseplus"
         },
         {
             "name":"SmartChess",
             "description":"Utilizing C# ASP.NET Core to create a web application that analyzes millions of chess games to discover how players play at different skill levels, such as how they start games and when they make mistakes.",
-            "assets":[]
+            "assets":"smartchess"
         },
         {
             "name":"FastTask",
             "description":"Created a desktop application with the JavaFX/FXML library that allowed the user to create a to-do list, track the progress of tasks and search for tasks by the due date.",
-            "assets":[]
+            "assets":"fasttask"
         }
     ]
 }
