@@ -1,9 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Jura');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
 html{
     height:100%;
     width:100%;
+    padding:0px
 }
 body{
     margin:0px;
+    padding:0px
+}
+h1{
+    width:100%;
+    margin-bottom:0px;
+    font-family: 'Jura';
+    font-weight: 700;
+    font-size: 128px;
+    text-align: center;
+    color:white
+}
+h2{
+    width:100%;
+    margin:0px;
+    font-family: 'Jura';
+    font-weight: 400;
+    font-size: 64px;
+    text-align: center;
+    color:white
+}
+
+
+
+
+
+h3{
+    width:100%;
+    margin: 75px 0px 0px 0px;
+    font-family: 'Abel';
+    font-weight: 400;
+    font-size: 64px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #FFFFFF;
 }
 .background {
     top:0px;
@@ -15,7 +53,7 @@ body{
     background: linear-gradient(116.82deg, #686868 3.17%, #1E1E1E 100%);
     mix-blend-mode: normal;
 }
-.background_bars{
+.background-bars{
     top: 0px;
     width: 100%;
     height: 100%;
@@ -31,4 +69,24 @@ body{
     height:100%;
     padding:0px;
     background: rgba(0, 0, 0, 0.08);
+}
+.home-contents{
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+/*MEDIA QUERIES*/
+
+/*changes size of home content*/
+@media (max-width: 530px){
+    h1{
+        font-size: 64px;
+    }
+    h2{
+        font-size: 32px;
+    }
+    h3{
+        font-size: 32px;
+    }
 }
