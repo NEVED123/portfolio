@@ -1,4 +1,14 @@
-h1{
+.home-contents__name{
+    animation: name-title 1.5s ease-in-out;
+    width:100%;
+    margin-bottom:0px;
+    font-family: 'Jura';
+    font-weight: 700;
+    font-size: 128px;
+    text-align: center;
+    color:white
+}
+.home-contents__name--loaded{
     animation: name-title 1.5s ease-in-out;
     width:100%;
     margin-bottom:0px;
@@ -58,8 +68,12 @@ h4{
 
 /*changes size of home content*/
 @media (max-width: 530px){
-    h1{
+    .home-contents__name{
         animation: name-title-mobile 1s ease-in-out;
+        font-size: 64px;
+        padding-top: 100px;
+    }
+    .home-contents__name--loaded{
         font-size: 64px;
         padding-top: 100px;
     }
