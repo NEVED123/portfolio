@@ -1,4 +1,5 @@
 h1{
+    animation: name-title 1.5s ease-in-out;
     width:100%;
     margin-bottom:0px;
     font-family: 'Jura';
@@ -52,6 +53,7 @@ h4{
 /*changes size of home content*/
 @media (max-width: 530px){
     h1{
+        animation: name-title-mobile 1s ease-in-out;
         font-size: 64px;
         padding-top: 100px;
     }
@@ -62,3 +64,27 @@ h4{
         font-size: 32px;
     }
 }
+
+/* animation for title fade in */
+@keyframes name-title {
+    0%{
+        opacity: 0%;
+        font-size:120px;
+    }
+    50%{
+        opacity: 0%;
+        font-size:120px;
+    }
+}
+
+@keyframes name-title-mobile {
+    0%{
+        opacity: 0%;
+        font-size:60px;
+    }
+    50%{
+        opacity: 0%;
+        font-size:60px;
+    }
+}
+
