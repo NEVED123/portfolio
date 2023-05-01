@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Jura');
 @import url('https://fonts.googleapis.com/css?family=Abel');
+@import url('https://fonts.googleapis.com/css?family=Aldrich');
+
 
 html{
     height:1000%;
@@ -50,6 +52,24 @@ body{
     padding-top: 30px;
     padding-right:30px;
 }
+
+.navbar--mobile{
+    position:fixed;
+    top:0px;
+    right:0px;
+    z-index:1000;
+    width:fit-content;
+    display:flex;
+    flex-direction: column;
+    align-items: end;
+    gap:13px;
+    margin: 0px;
+    padding: 30px 30px 10px 40px;
+    border-radius: 5px;
+    opacity: 95%;
+    background-color: #181818;
+}
+
 .navbar__item{
     font-family:Jura;
     text-decoration-thickness: from-font;
@@ -72,6 +92,11 @@ body{
 .navbar__hamburger{
     display:none;
 }
+.navbar__x{
+    font-family:Aldrich;
+    font-size:48px;
+    color:white;
+}
 .logo{
     height:50px;
     width:50px;
@@ -80,12 +105,19 @@ body{
 
 /* at max 900, navbar needs to compress */
 @media (max-width:900px){
-    .navbar__item{
+    .navbar .navbar__item{
         display:none
     }
     .navbar__hamburger{
         display:block;
         height:37;
         width:50;
+    }
+}
+
+/*at max 350, icon needs to shrink*/
+@media (max-width:350px){
+    .navbar__home-icon{
+        font-size:32px;
     }
 }

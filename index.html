@@ -7,8 +7,9 @@
     <title>Deven Mallamo</title>
     <link href="css/main.css" rel="Stylesheet">
     <link href="css/home.css" rel="Stylesheet">
+    <script src="js/navbar.js"></script>
 </head>
-<body>
+<body id="home">
     <div class="background">
         <div class="background-bars">
             <div class="background-bars__bar"></div>
@@ -25,7 +26,10 @@
             <div class="background-bars__bar"></div>
         </div>
     </div>
-    <div class="navbar">
+    <div class="navbar" id="navbar">
+        <a class="navbar__hamburger" onclick="toggleNavbar()">
+            <img src="assets/icons/hamburger.png" class="logo">
+        </a>
         <a class="navbar__item" href="#skills">skills</a>
         <a class="navbar__item" href="#work">work</a>
         <a class="navbar__item" href="#resume">resume</a>
@@ -34,9 +38,6 @@
         <a class="navbar__item" href="#fun">fun</a>
         <a class="navbar__item" href="https://github.com/NEVED123" target="_blank"><img src="assets/icons/github.png" class="logo"></a>
         <a class="navbar__item" href="https://www.linkedin.com/in/deven-mallamo/" target="_blank"><img src="assets/icons/linkedin.png" class="logo"></a>
-        <a class="navbar__hamburger">
-            <img src="assets/icons/hamburger.png" class="logo">
-        </a>
     </div>
     <div>
         <a class="navbar__home-icon" href="#home">DM:\></a>
