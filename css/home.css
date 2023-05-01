@@ -1,5 +1,5 @@
 h1{
-    animation: name-title 1.5s ease-in-out;
+    animation: name-title .75s ease-in-out .75s;
     width:100%;
     margin-bottom:0px;
     font-family: 'Jura';
@@ -69,22 +69,14 @@ h4{
 @keyframes name-title {
     0%{
         opacity: 0%;
-        font-size:120px;
-    }
-    50%{
-        opacity: 0%;
-        font-size:120px;
+        transform: scale(.8, .8) translateY(50px);
     }
 }
 
 @keyframes name-title-mobile {
     0%{
         opacity: 0%;
-        font-size:60px;
-    }
-    50%{
-        opacity: 0%;
-        font-size:60px;
+        transform: scale(.8, .8) translateY(48px);
     }
 }
 
