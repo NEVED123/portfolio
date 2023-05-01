@@ -26,10 +26,25 @@ h3{
     text-decoration-line: underline;
     color: #FFFFFF;
 }
+h4{
+    position:absolute;
+    bottom: 2vh;
+    left:10px;
+    width:100%;
+    margin:0px;
+    font-family: 'Jura';
+    font-weight: 400;
+    font-size: 24px;
+    color:white
+}
 
 .home-contents{
     justify-content: center;
     align-items: center;
+}
+
+.disappear{
+    opacity: 0%;
 }
 
 /*MEDIA QUERIES*/
