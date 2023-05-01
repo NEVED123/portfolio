@@ -39,7 +39,9 @@ h4{
     font-family: 'Jura';
     font-weight: 400;
     font-size: 24px;
-    color:white
+    color:white;
+    opacity: 100%;
+    transition: opacity .5s;
 }
 
 .home-contents{
@@ -48,6 +50,7 @@ h4{
 }
 
 .disappear{
+    transition: .5s;
     opacity: 0%;
 }
 
