@@ -42,10 +42,11 @@ h3{
 h4{
     animation: content-fade-in 4s ease-in-out;
     position:absolute;
-    bottom: 2vh;
     left:10px;
+    top:90vh;
     width:100%;
     margin:0px;
+    padding:0px;
     font-family: 'Jura';
     font-weight: 400;
     font-size: 24px;
@@ -55,6 +56,9 @@ h4{
 }
 
 .home-contents{
+    position:absolute;
+    top:10vh;
+    width:100%;
     justify-content: center;
     align-items: center;
 }
@@ -67,15 +71,13 @@ h4{
 /*MEDIA QUERIES*/
 
 /*changes size of home content*/
-@media (max-width: 530px){
+@media (max-width: 530px), (max-height: 625px){
     .home-contents__name{
         animation: name-title-mobile 1s ease-in-out;
         font-size: 64px;
-        padding-top: 100px;
     }
     .home-contents__name--loaded{
         font-size: 64px;
-        padding-top: 100px;
     }
     h2{
         animation: content-fade-in 4s ease-in-out;
@@ -85,6 +87,14 @@ h4{
         font-size: 32px;
     }
 }
+
+@media (max-height: 625px){
+    .home-contents{
+        top:5vh;
+    }
+}
+
+
 
 /* animation for title fade in */
 @keyframes name-title {

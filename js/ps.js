@@ -1,7 +1,7 @@
 window.addEventListener("scroll", () => {
     const text = document.getElementById('for-you');
     var y = window.scrollY;
-    if (y >= 100){
+    if (y >= 150){
         text.classList.add('disappear');
         return;
     }
