@@ -89,13 +89,13 @@ body{
     border-radius: 5px;
     opacity: 95%;
     background-color: #181818;
-    animation: close-background-navbar-mobile .5s;
+    animation: close-background-navbar-mobile .5s forwards;
 }
 
 .navbar--mobile--closing > .navbar__item {
-    animation: close-navbar-mobile .5s;
+    animation: close-navbar-mobile .5s forwards;
 }
-
+ 
 .navbar__item{
     font-family:Jura;
     text-decoration-thickness: from-font;
