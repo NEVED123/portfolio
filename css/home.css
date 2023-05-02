@@ -46,13 +46,12 @@ h3:hover{
     transition: .3s;
 }
 h4{
-    animation: content-fade-in 4s ease-in-out;
     position:absolute;
+    bottom:10px;
     left:10px;
-    top:90vh;
-    width:100%;
     margin:0px;
     padding:0px;
+    animation: content-fade-in 4s ease-in-out;
     font-family: 'Jura';
     font-weight: 400;
     font-size: 24px;
@@ -63,8 +62,9 @@ h4{
 
 .home-contents{
     position:absolute;
-    top:10vh;
+    top:10%;
     width:100%;
+    height:fit-content;
     justify-content: center;
     align-items: center;
 }
@@ -93,14 +93,6 @@ h4{
         font-size: 32px;
     }
 }
-
-@media (max-height: 625px){
-    .home-contents{
-        top:5vh;
-    }
-}
-
-
 
 /* animation for title fade in */
 @keyframes name-title {

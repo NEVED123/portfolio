@@ -12,6 +12,7 @@ body{
     margin:0px;
     padding:0px;
 }
+
 .background {
     top:0px;
     position:fixed;
@@ -40,6 +41,13 @@ body{
     background: rgba(0, 0, 0, 0.08);
 }
 
+.page{
+    position: absolute;
+    min-height: 100%;
+    width:100%;
+    box-sizing: border-box;
+    background-color: #00ffff10;
+}
 /* NAVBAR STYLING */
 
 .navbar{
