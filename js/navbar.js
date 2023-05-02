@@ -5,6 +5,11 @@ function toggleNavbar(){
       x.className += "--mobile";
     } 
     else{
-      x.className = "navbar";
+      x.className += "--closing"
+      console.log(x.className)
+      setTimeout(()=>{
+        x.className = "navbar"
+      },500)
+
     }
 }

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Jura');
 @import url('https://fonts.googleapis.com/css?family=Abel');
-@import url('https://fonts.googleapis.com/css?family=Aldrich');
+/* @import url('https://fonts.googleapis.com/css?family=Aldrich'); */
 
 html{
     height:1000%;
@@ -67,6 +67,29 @@ body{
     border-radius: 5px;
     opacity: 95%;
     background-color: #181818;
+    animation: open-navbar-mobile .5s;
+}
+
+.navbar--mobile--closing{
+    position:fixed;
+    top:0px;
+    right:0px;
+    z-index:1000;
+    width:fit-content;
+    display:flex;
+    flex-direction: column;
+    align-items: end;
+    gap:13px;
+    margin: 0px;
+    padding: 30px 30px 10px 40px;
+    border-radius: 5px;
+    opacity: 95%;
+    background-color: #181818;
+    animation: close-background-navbar-mobile .5s;
+}
+
+.navbar--mobile--closing > .navbar__item {
+    animation: close-navbar-mobile .5s;
 }
 
 .navbar__item{
@@ -109,11 +132,7 @@ body{
 .navbar__hamburger{
     display:none;
 }
-.navbar__x{
-    font-family:Aldrich;
-    font-size:48px;
-    color:white;
-}
+
 .logo{
     height:50px;
     width:50px;
@@ -151,5 +170,35 @@ body{
     }
     50%{
         opacity:0%;
+    }
+}
+
+@keyframes open-navbar-mobile{
+    0%{
+        opacity:0%
+    }
+    100%{
+        opacity:95%
+    }
+}
+
+@keyframes close-navbar-mobile{
+    0%{
+        opacity:95%;
+        
+    }
+    100%{
+        opacity:0%;
+    }
+}
+
+/* this code shouldnt be necessary but it definitely works, its just gross as hell and I'll forget why its here in a week */
+@keyframes close-background-navbar-mobile{
+    0%{
+        background-color: #181818;
+        
+    }
+    100%{
+        background-color: #00000000;
     }
 }
