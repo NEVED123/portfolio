@@ -1,15 +1,6 @@
-.home-contents__name{
-    animation: name-title 1.5s ease-in-out;
-    width:100%;
-    margin-bottom:0px;
-    font-family: 'Jura';
-    font-weight: 700;
-    font-size: 128px;
-    text-align: center;
-    color:white
-}
-.home-contents__name--loaded{
-    animation: name-title 1.5s ease-in-out;
+
+//I have no idea what is happening in the first 3 selectors and my js but it works 🤷‍♂️
+%home-contents__name{
     width:100%;
     margin-bottom:0px;
     font-family: 'Jura';
@@ -18,6 +9,16 @@
     text-align: center;
     color:white;
 }
+
+.home-contents__name{
+    @extend %home-contents__name;
+    animation: name-title 1.5s ease-in-out;
+}
+.home-contents__name--loaded{
+    @extend %home-contents__name;
+    animation: name-title 1.5s ease-in-out;
+}
+
 .home-contents__subtitle{
     animation: content-fade-in 4s ease-in-out;
     width:100%;
@@ -95,25 +96,32 @@
 }
 
 /* animation for title fade in */
+
+@mixin name-title-styles{
+    opacity: 0%;
+    transform: scale(.8, .8) translateY(50px);
+}
+
 @keyframes name-title {
     0%{
-        opacity: 0%;
-        transform: scale(.8, .8) translateY(50px);
+        @include name-title-styles;
     }
     50%{
-        opacity: 0%;
-        transform: scale(.8, .8) translateY(50px);
+        @include name-title-styles;
     }
+}
+
+@mixin name-title-mobile-styles{
+    opacity: 0%;
+    transform: scale(.8, .8) translateY(48px);
 }
 
 @keyframes name-title-mobile {
     0%{
-        opacity: 0%;
-        transform: scale(.8, .8) translateY(48px);
+        @include name-title-mobile-styles;
     }
     50%{
-        opacity: 0%;
-        transform: scale(.8, .8) translateY(48px);
+        @include name-title-mobile-styles;
     }
 }
 
