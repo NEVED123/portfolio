@@ -6,15 +6,15 @@
         },
         {
             "name":"front-end skills",
-            "items":["React, React Native, Bootstrap, Sass, JavaFX/FXML"]
+            "items":["React", "React Native", "Bootstrap", "Sass", "JavaFX/FXML"]
         },
         {
             "name":"back-end skills",
-            "items":["Jest, JUnit, Node.js, MySQL"]
+            "items":["Jest", "JUnit", "Node.js", "MySQL"]
         },
         {
             "name":"tools",
-            "items":["Git/GitHub, Visual Studio Code, Visual Studios, Various IDEs"]
+            "items":["Git/GitHub", "Visual Studio Code", "Visual Studios", "Various IDEs"]
         }
     ]
 }
