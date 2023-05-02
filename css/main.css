@@ -67,6 +67,10 @@ body{
     border-radius: 5px;
     opacity: 95%;
     background-color: #181818;
+    animation: open-background-navbar-mobile .5s;
+}
+
+.navbar--mobile > .navbar__item {
     animation: open-navbar-mobile .5s;
 }
 
@@ -179,6 +183,15 @@ body{
     }
     100%{
         opacity:95%
+    }
+}
+
+@keyframes open-background-navbar-mobile{
+    0%{
+        background-color: #00000000;
+    }
+    100%{
+        background-color: #181818;
     }
 }
 
