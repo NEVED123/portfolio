@@ -5,12 +5,16 @@
             "items":["JavaScript","TypeScript","HTML","CSS","Java","Python","C#","SQL"]
         },
         {
-            "name":"frameworks/libraries",
-            "items":["React, React Native, Bootstrap, .NET Framework, Jest, JUnit, JavaFX/FXML"]
+            "name":"front-end skills",
+            "items":["React, React Native, Bootstrap, Sass, JavaFX/FXML"]
+        },
+        {
+            "name":"back-end skills",
+            "items":["Jest, JUnit, Node.js, MySQL"]
         },
         {
             "name":"tools",
-            "items":["Git/GitHub, Visual Studio Code, Visual Studios, MySQL"]
+            "items":["Git/GitHub, Visual Studio Code, Visual Studios, Various IDEs"]
         }
     ]
 }
