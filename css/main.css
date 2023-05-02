@@ -2,9 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Abel');
 /* @import url('https://fonts.googleapis.com/css?family=Aldrich'); */
 
-*{
-    box-sizing: border-box;
-}
 html{
     height:1000%;
     width:100%;
@@ -129,6 +126,7 @@ body{
     left:0px;
     padding-left:30px;
     padding-top: 12px;
+    z-index:1000;
     font-family:Jura;
     font-size:64px;
     text-decoration: none;

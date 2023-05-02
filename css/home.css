@@ -27,11 +27,6 @@ h2{
     font-size: 64px;
     text-align: center;
     color:white;
-    transition: .3s;
-}
-
-h2:hover{
-    text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
 }
 h3{
     animation: content-fade-in 4s ease-in-out;
@@ -47,7 +42,7 @@ h3{
 
 h3:hover{
     text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.5);
-    transform: translateY(-5px);
+    transform: translateY(-5px);    
     transition: .3s;
 }
 h4{
