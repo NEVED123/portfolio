@@ -16,7 +16,7 @@
     font-weight: 700;
     font-size: 128px;
     text-align: center;
-    color:white
+    color:white;
 }
 h2{
     animation: content-fade-in 4s ease-in-out;
@@ -38,6 +38,12 @@ h3{
     text-align: center;
     text-decoration-line: underline;
     color: #FFFFFF;
+}
+
+h3:hover{
+    text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+    transition: .3s;
 }
 h4{
     animation: content-fade-in 4s ease-in-out;
