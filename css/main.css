@@ -39,6 +39,9 @@ body{
     padding:0px;
     background: rgba(0, 0, 0, 0.08);
 }
+
+/* NAVBAR STYLING */
+
 .navbar{
     position:fixed;
     top:0px;
@@ -102,6 +105,12 @@ body{
     font-size:24px;
     color:white;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: .1s;
+}
+
+.navbar__item:hover, .logo:hover{
+    text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.9);
+    transform: translateX(2px) translateY(-3px);
 }
 .navbar__home-icon{
     position:fixed;
