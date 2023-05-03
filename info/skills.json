@@ -1,19 +1,19 @@
 {
     "categories":[
         {
-            "name":"languages",
+            "name":"Languages",
             "items":["JavaScript","TypeScript","HTML","CSS","Java","Python","C#","SQL"]
         },
         {
-            "name":"front-end skills",
+            "name":"Front-end",
             "items":["React", "React Native", "Bootstrap", "Sass", "JavaFX/FXML"]
         },
         {
-            "name":"back-end skills",
+            "name":"Back-end",
             "items":["Jest", "JUnit", "Node.js", "MySQL"]
         },
         {
-            "name":"tools",
+            "name":"Tools",
             "items":["Git/GitHub", "Visual Studio Code", "Visual Studios", "Various IDEs"]
         }
     ]
