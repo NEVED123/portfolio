@@ -4,7 +4,7 @@ function toggleNavbar(){
     if (x.className === "navbar") {
       x.className += "--mobile";
     } 
-    else{
+    else if(x.className === "navbar--mobile"){
       x.className += "--closing"
       console.log(x.className)
       setTimeout(()=>{

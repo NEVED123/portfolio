@@ -57,6 +57,7 @@ $carousel-width--mobile: 80vw;
     border-radius: 15px;
     padding:20px 0px 20px 0px;
     box-shadow: inset 15px 15px 4px rgba(0, 0, 0, 0.25);
+    animation: show-carousel .5s forwards;
 }
 
 .carousel__image-frame{
@@ -77,9 +78,33 @@ $carousel-width--mobile: 80vw;
 }
 
 .hidden{
-    width: 0px;
-    height: 0px;
-    visibility: hidden;
+    animation: hide-carousel .5s forwards;
+}
+
+@keyframes hide-carousel {
+    0%{
+        opacity: 100%;
+        max-height: 60vh;
+        width: $carousel-width--mobile
+    }
+    100%{
+        opacity: 0%;
+        height: 0px;
+        width: 0px;
+    }
+}
+
+@keyframes show-carousel {
+    0%{
+        opacity: 0%;
+        height: 0px;
+        width: 0px;
+    }
+    100%{
+        opacity: 100%;
+        max-height: 60vh;
+        width: $carousel-width--mobile
+    }
 }
 
 // .carousel__frame--disabled{

@@ -21,8 +21,6 @@ function openElement(clickedDiv){
         return
     }
 
-
-
     //get the siblings for the one we need to close
 
     const siblings = Array.from(clickedDiv.parentElement.children)

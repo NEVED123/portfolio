@@ -217,8 +217,7 @@ html,body{
 /* this code shouldnt be necessary but it definitely works, its just gross as hell and I'll forget why its here in a week */
 @keyframes close-background-navbar-mobile{
     0%{
-        background-color: #181818;
-        
+        background-color: #181818;   
     }
     100%{
         background-color: #00000000;
