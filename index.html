@@ -15,6 +15,7 @@
     <script src="js/nameFadeManager.js"></script>
     <script src="js/generateSkills.js"></script>
     <script src="js/accordionManager.js"></script>
+    <script src="js/carousel.js"></script>
 </head>
 
 <body>
@@ -78,51 +79,60 @@
         <div class="projects-contents--mobile">
             <div class="projects-contents__projects">
                 <div class="projects-contents__project">
-                    <div class="projects-contents__project__title" id="0" onclick="openElement(this)">
+                    <div class="projects-contents__project__title" id="1" onclick="openElement(this)">
                         Project Title 1
                     </div>
                     <div class="project-contents__project__description hidden" id="0">
-                        Lorem Ipsum 
-                    </div>
-                    <div class="carousel__frame hidden" id="0">
-                        <div class="carousel__image-frame">
-                            <img class="carousel__image" src="assets/projects/fasttask/1.png">
-                        </div>     
-                        <div class="carousel__image-frame">
-                            <img class="carousel__image" src="assets/projects/pulseplus/1.png">
-                        </div>           
-                        <div class="carousel__image-frame">
-                            <img class="carousel__image" src="assets/projects/pulseplus/1.png">
-                        </div>                                     
-                    </div>
-                </div>
-                <div class="projects-contents__project">
-                    <div class="projects-contents__project__title" id="1" onclick="openElement(this)">
-                        Project Title 2
-                    </div>
-                    <div class="project-contents__project__description hidden" id="1">
                         Lorem Ipsum
                     </div>
-                    <div class="carousel__frame hidden" id="1">
-                        <div class="carousel__image-frame">
-                            <img class="carousel__image" src="assets/projects/fasttask/1.png">
-                        </div>     
-                        <div class="carousel__image-frame">
-                            <img class="carousel__image" src="assets/projects/pulseplus/1.png">
-                        </div>           
-                        <div class="carousel__image-frame">
-                            <img class="carousel__image" src="assets/projects/pulseplus/1.png">
-                        </div>                                     
-                    </div>
+                        <div class="carousel__frame hidden" id="1">
+                            <a class="carousel__frame__arrow--left" onclick="moveLeft(this)">&lt</a>
+                            <a class="carousel__frame__arrow--right" onclick="moveRight(this)">&gt</a>                        
+                            <div class="carousel__image-frame" id="carousel0">
+                                <img class="carousel__image" src="assets/projects/pulseplus/1.png">
+                            </div>     
+                            <div class="carousel__image-frame">
+                                <img class="carousel__image" src="assets/projects/pulseplus/2.gif">
+                            </div>           
+                            <div class="carousel__image-frame">
+                                <img class="carousel__image" src="assets/projects/pulseplus/3.png">
+                            </div>
+                            <div class="carousel__image-frame">
+                                <img class="carousel__image" src="assets/projects/pulseplus/4.png">
+                            </div>  
+                            <div class="carousel__image-frame" id="carousel0">
+                                <img class="carousel__image" src="assets/projects/pulseplus/1.png">
+                            </div>     
+                            
+                        </div>
                 </div>
                 <div class="projects-contents__project">
                     <div class="projects-contents__project__title" id="2" onclick="openElement(this)">
-                        Project Title 3
+                        Project Title 2
                     </div>
                     <div class="project-contents__project__description hidden" id="2">
-                        Lorem Ipsum 
+                        Lorem Ipsum
                     </div>
                     <div class="carousel__frame hidden" id="2">
+                        <div class="carousel__image-frame">
+                            <img class="carousel__image" src="assets/projects/fasttask/1.png">
+                        </div>     
+                        <div class="carousel__image-frame">
+                            <img class="carousel__image" src="assets/projects/pulseplus/1.png">
+                        </div>           
+                        <div class="carousel__image-frame">
+                            <img class="carousel__image" src="assets/projects/pulseplus/1.png">
+                        </div>                                     
+                    </div>
+                </div>
+                <div class="projects-contents__project">
+                    <div class="projects-contents__project__title" id="3" onclick="openElement(this)">
+                        Project Title 3
+                    </div>
+                    <div class="project-contents__project__description hidden" id="3">
+                        Lorem Ipsum 
+                    </div>
+                    <div class="carousel__frame hidden" id="3">
                         <div class="carousel__image-frame">
                             <img class="carousel__image" src="assets/projects/fasttask/1.png">
                         </div>     

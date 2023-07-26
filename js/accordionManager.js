@@ -9,7 +9,7 @@ function openElement(clickedDiv){
 
         const siblings = Array.from(clickedDiv.parentElement.children)
 
-        console.log(siblings)
+        //console.log(siblings)
     
         siblings.forEach((sibling)=>{
             if(sibling.className != clickedDiv.className){
@@ -25,7 +25,7 @@ function openElement(clickedDiv){
 
     const siblings = Array.from(clickedDiv.parentElement.children)
 
-    console.log(siblings)
+    //console.log(siblings)
 
     siblings.forEach((sibling)=>{
         if(sibling.className != clickedDiv.className){

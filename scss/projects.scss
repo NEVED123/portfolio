@@ -1,8 +1,7 @@
-// .projects-contents--desktop{
+@use "sass:math";
+@import url('https://fonts.googleapis.com/css?family=Abel');
 
-// }
-
-$carousel-width--mobile: 80vw;
+$carousel-width--mobile: 80%;
 
 .projects-contents--mobile{
     height:100%;
@@ -43,9 +42,12 @@ $carousel-width--mobile: 80vw;
     font-size: 24px;
     text-align: center;
     color: #FFFFFF;
+    animation: show-carousel .5s forwards;
 }
 
 .carousel__frame{
+    touch-action: none;
+    overscroll-behavior: none;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     display: flex;
@@ -60,14 +62,21 @@ $carousel-width--mobile: 80vw;
     animation: show-carousel .5s forwards;
 }
 
+// .carousel__frame::-webkit-scrollbar{
+//     @extend .carousel__frame;
+//     display: none;
+// }
+
+
 .carousel__image-frame{
-    scroll-snap-align: start;
-    min-width: $carousel-width--mobile;
+    scroll-snap-align: center;
+    min-width: 100%;
     height: 100%;
     justify-content: center;
     display: flex;
     padding:5px;
     border-radius: 15px;
+    animation: show-carousel .5s forwards;
 }   
 
 .carousel__image{
@@ -75,10 +84,32 @@ $carousel-width--mobile: 80vw;
     object-fit: scale-down;
     max-width: 100%;
     max-height: 100%;
+    animation: show-carousel .5s forwards;
 }
 
 .hidden{
     animation: hide-carousel .5s forwards;
+}
+
+.carousel__frame__arrow{
+    color: #CCCCCC;
+    font-size: large;
+    position: sticky;
+    z-index: 1000;
+    top: 25vh;
+    width: 0px;
+    font-family: 'Abel';
+    font-size: 50px
+}
+
+.carousel__frame__arrow--left{
+    @extend .carousel__frame__arrow;
+    left: 10px;
+}
+  
+.carousel__frame__arrow--right{
+    @extend .carousel__frame__arrow;  
+    left: calc(100% - 45px) //temp value until logo is used
 }
 
 @keyframes hide-carousel {
@@ -97,26 +128,16 @@ $carousel-width--mobile: 80vw;
 @keyframes show-carousel {
     0%{
         opacity: 0%;
-        height: 0px;
-        width: 0px;
+        transform: scale(0%);
     }
     100%{
         opacity: 100%;
-        max-height: 60vh;
+        transform: scale(100%);
         width: $carousel-width--mobile
     }
 }
 
-// .carousel__frame--disabled{
 
-// }
 
-// .carousel__arrows{
-
-// }
-
-// .carousel__arrows--disabled{
-
-// }
 
 
