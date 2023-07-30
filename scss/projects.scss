@@ -61,10 +61,10 @@ $carousel-width--mobile: 80%;
     animation: show-carousel .5s forwards;
 }
 
-// .carousel__frame::-webkit-scrollbar{
-//     @extend .carousel__frame;
-//     display: none;
-// }
+.carousel__frame::-webkit-scrollbar{
+    @extend .carousel__frame;
+    display: none;
+}
 
 
 .carousel__image-frame{

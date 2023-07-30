@@ -2,8 +2,7 @@
     "categories":[
         {
             "name":"Portfolio",
-            "description":"Creating this website to showcase my skills as a developer. Will require thorough knowledge of HTML, CSS, and JavaScript, frameworks such as Sass, and Figma for UI design.",
-            "assets":"portfolio"
+            "description":"Created this website to showcase my skills as a developer. I set a challenge to accomplish everything with no frameworks - the only resources besides HTML, CSS, and Javascript are Sass and Matter.js. Used Figma for UI design."
         },
         {
             "name":"4Chess",
@@ -13,7 +12,7 @@
         {
             "name":"PgnAnalyzer",
             "description":"Utilizing C# command line tools to create a customizable framework that analyzes millions of chess games to discover how players play at different skill levels, such as how they start games and when they make mistakes.",
-            "assets":"smartchess"
+            "assets":"pgnanalyzer"
         },
         {
             "name":"Pulse+",
@@ -21,7 +20,7 @@
             "assets":"pulseplus"
         },
         {
-            "name":"FastTask",
+            "name":"Fast->Task",
             "description":"Created a desktop application with the JavaFX/FXML library that allowed the user to create a to-do list, track the progress of tasks and search for tasks by the due date.",
             "assets":"fasttask"
         }

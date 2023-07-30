@@ -31,49 +31,55 @@ async function parseProjects(projects){
         projectDesc.setAttribute('id',carouselNumber.toString())
         projectDesc.appendChild(document.createTextNode(category.description))
 
-        //carousel frame
-        const carouselFrame = document.createElement('div')
-        carouselFrame.setAttribute('class', 'carousel__frame hidden')
-        carouselFrame.setAttribute('id',carouselNumber.toString())
-
-        const leftArrow = document.createElement('a')
-        leftArrow.setAttribute('class', 'carousel__frame__arrow--left')
-        leftArrow.setAttribute('onClick', 'moveLeft(this)')
-        leftArrow.appendChild(document.createTextNode('<'))
-
-        const rightArrow = document.createElement('a')
-        rightArrow.setAttribute('class', 'carousel__frame__arrow--right')
-        rightArrow.setAttribute('onClick', 'moveRight(this)')
-        rightArrow.appendChild(document.createTextNode('>'))
-
-        carouselFrame.appendChild(leftArrow)
-        carouselFrame.appendChild(rightArrow)
-
-        const assetsPath = `../assets/projects/${category.assets}`
-
-        await getFilePathsFromDirectory(assetsPath).then((paths)=>{
-            console.log(paths)
-            paths.forEach((path)=>{
-                const imageWrapper = document.createElement('div')
-                imageWrapper.setAttribute('class', 'carousel__image-frame')
-    
-                const image = document.createElement('img')
-                image.setAttribute('class', 'carousel__image')
-                image.setAttribute('src', path)
-    
-                imageWrapper.appendChild(image)
-                carouselFrame.appendChild(imageWrapper)
-            })
-        })
-
         carousel.appendChild(projectTitle)
         carousel.appendChild(projectDesc)
-        carousel.appendChild(carouselFrame)
+
+        if(category.assets != null){
+
+            //carousel frame
+            const carouselFrame = document.createElement('div')
+            carouselFrame.setAttribute('class', 'carousel__frame hidden')
+            carouselFrame.setAttribute('id',carouselNumber.toString())
+
+            const leftArrow = document.createElement('a')
+            leftArrow.setAttribute('class', 'carousel__frame__arrow--left')
+            leftArrow.setAttribute('onClick', 'moveLeft(this)')
+            leftArrow.appendChild(document.createTextNode('<'))
+
+            const rightArrow = document.createElement('a')
+            rightArrow.setAttribute('class', 'carousel__frame__arrow--right')
+            rightArrow.setAttribute('onClick', 'moveRight(this)')
+            rightArrow.appendChild(document.createTextNode('>'))
+
+            carouselFrame.appendChild(leftArrow)
+            carouselFrame.appendChild(rightArrow)
+
+            const assetsPath = `../assets/projects/${category.assets}`
+
+            await getFilePathsFromDirectory(assetsPath).then((paths)=>{
+                
+                paths.forEach((path)=>{
+                    const image = generateCarouselImage(path)
+                    carouselFrame.appendChild(image)
+                })
+    
+                if(paths.length > 0){
+                    const firstImage = generateCarouselImage(paths[0])
+                    carouselFrame.appendChild(firstImage)
+                }
+            })
+
+            carousel.appendChild(carouselFrame)
+            
+            
+        }
+        else{
+            projectDesc.setAttribute('style', 'padding: 20px 0px 20px 0px')
+        }
+
         project.appendChild(carousel)
         document.getElementById('project-set').appendChild(project)
     })
-
-    
 }
 
 function getFilePathsFromDirectory(filepath) {
@@ -100,6 +106,15 @@ function getFilePathsFromDirectory(filepath) {
 
 }
 
-/**
- *         
- */
+function generateCarouselImage(src){
+    const imageWrapper = document.createElement('div')
+    imageWrapper.setAttribute('class', 'carousel__image-frame')
+
+    const image = document.createElement('img')
+    image.setAttribute('class', 'carousel__image')
+    image.setAttribute('src', src)
+
+    imageWrapper.appendChild(image)
+
+    return imageWrapper;
+}
