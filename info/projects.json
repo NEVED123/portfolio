@@ -1,5 +1,4 @@
 {   
-    "root":"assets/projects",
     "categories":[
         {
             "name":"Portfolio",
@@ -7,14 +6,19 @@
             "assets":"portfolio"
         },
         {
+            "name":"4Chess",
+            "description":"Developing a mobile app for Android and iOS using Flutter and Dart to allow people to play timed four player chess with a real board.",
+            "assets":"4chess"
+        },
+        {
+            "name":"PgnAnalyzer",
+            "description":"Utilizing C# command line tools to create a customizable framework that analyzes millions of chess games to discover how players play at different skill levels, such as how they start games and when they make mistakes.",
+            "assets":"smartchess"
+        },
+        {
             "name":"Pulse+",
             "description":"Developed a mobile app for Android and iOS using React Native and Typescript that enables musicians to practice tuning and rhythm, and to create custom presets for specific songs.",
             "assets":"pulseplus"
-        },
-        {
-            "name":"SmartChess",
-            "description":"Utilizing C# ASP.NET Core to create a web application that analyzes millions of chess games to discover how players play at different skill levels, such as how they start games and when they make mistakes.",
-            "assets":"smartchess"
         },
         {
             "name":"FastTask",

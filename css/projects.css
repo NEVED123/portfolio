@@ -43,7 +43,6 @@
 
 .carousel__frame {
   touch-action: none;
-  overscroll-behavior: none;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   display: flex;

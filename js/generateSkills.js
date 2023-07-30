@@ -1,10 +1,10 @@
 window.addEventListener("load", ()=>{
     fetch('../info/skills.json')
     .then((response) => response.json())
-    .then((json) => parseJSON(json));
+    .then((json) => parseSkills(json));
 })
 
-function parseJSON(skills){
+function parseSkills(skills){
 
     const skillContents = document.createDocumentFragment();
 
