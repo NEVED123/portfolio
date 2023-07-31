@@ -6,6 +6,10 @@ window.addEventListener("load", ()=>{
     fetch('../info/work.json')
     .then((response) => response.json())
     .then((json) => parseWork(json))
+
+    fetch('../info/aboutme.json')
+    .then((response) => response.json())
+    .then((json) => parseAbout(json))
 })
 
 let carouselNumber = 0
@@ -78,7 +82,6 @@ async function parseWork(work){
         workTitle.setAttribute('onClick','openElement(this)')
         workTitle.appendChild(document.createTextNode(category.name))
         
-
         const position = document.createElement('div')
         position.setAttribute('class','infos-contents__info__subtitle hidden')
         position.setAttribute('id',carouselNumber.toString())
@@ -112,6 +115,98 @@ async function parseWork(work){
 
         project.appendChild(carousel)
         document.getElementById('work-set').appendChild(project)
+    })
+}
+
+async function parseProjects(projects){
+
+    carouselNumber = 0
+
+    const project = document.createDocumentFragment();
+
+    await projects.categories.forEach(async (category)=>{
+
+        carouselNumber++;
+
+        //create div to wrap each carousel
+        const carousel = document.createElement('div')
+        carousel.setAttribute('class','info-contents__info')
+        carousel.setAttribute('id',carouselNumber.toString())
+
+        //create title for project
+        const title = document.createElement('div')
+        title.setAttribute('class','infos-contents__info__title')
+        title.classList.add('class','visible')
+        title.setAttribute('id',carouselNumber.toString())
+        title.setAttribute('onClick','openElement(this)')
+        title.appendChild(document.createTextNode(category.name))
+
+        //create description for project
+        const projectDesc = document.createElement('div')
+        projectDesc.setAttribute('class','info-contents__info__description hidden')
+        projectDesc.setAttribute('id',carouselNumber.toString())
+        projectDesc.appendChild(document.createTextNode(category.description))
+
+        carousel.appendChild(title)
+        carousel.appendChild(projectDesc)
+
+        if(category.assets != null){
+            const assetsPath = `../assets/projects/${category.assets}`
+            const carouselFrame = await generateCarousel(assetsPath, carouselNumber)
+            carousel.appendChild(carouselFrame)    
+        }
+        else{
+            projectDesc.setAttribute('style', 'padding: 20px 0px 20px 0px')
+        }
+
+        project.appendChild(carousel)
+        document.getElementById('project-set').appendChild(project)
+    })
+}
+
+async function parseAbout(abouts){
+
+    carouselNumber = 0
+
+    const project = document.createDocumentFragment();
+
+    await abouts.categories.forEach(async (category)=>{
+
+        carouselNumber++;
+
+        //create div to wrap each carousel
+        const carousel = document.createElement('div')
+        carousel.setAttribute('class','info-contents__info')
+        carousel.setAttribute('id',carouselNumber.toString())
+
+        //create title for project
+        const title = document.createElement('div')
+        title.setAttribute('class','infos-contents__info__title')
+        title.classList.add('class','visible')
+        title.setAttribute('id',carouselNumber.toString())
+        title.setAttribute('onClick','openElement(this)')
+        title.appendChild(document.createTextNode(category.name))
+
+        //create description for project
+        const projectDesc = document.createElement('div')
+        projectDesc.setAttribute('class','info-contents__info__description hidden')
+        projectDesc.setAttribute('id',carouselNumber.toString())
+        projectDesc.appendChild(document.createTextNode(category.description))
+
+        carousel.appendChild(title)
+        carousel.appendChild(projectDesc)
+
+        if(category.assets != null){
+            const assetsPath = `../assets/aboutme/${category.assets}`
+            const carouselFrame = await generateCarousel(assetsPath, carouselNumber)
+            carousel.appendChild(carouselFrame)    
+        }
+        else{
+            projectDesc.setAttribute('style', 'padding: 20px 0px 20px 0px')
+        }
+
+        project.appendChild(carousel)
+        document.getElementById('about-set').appendChild(project)
     })
 }
 
