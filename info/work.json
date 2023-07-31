@@ -3,13 +3,13 @@
         {
             "name": "KUKA",
             "position":"Virtual Commissioning Developer Internship",
-            "dates:":"May 2023 - August 2023",
+            "dates":"May 2023 - August 2023",
             "description":"Using C# to create a software which tests assembly line control units.",
             "assets":"kuka"
         },
         {
             "name":"Other Jobs",
-            "positiion":"Music Teacher",
+            "position":"Music Teacher",
             "dates":"Febuary 2016 - August 2024",
             "description":"I have taught music for 8 years, first as a piano teacher for young students at Music Stadium, then as a music theory tutor at Oakland University starting in September 2022. These positions have required me to communicate complex ideas to students, and to assume a leadership role to inspire students and keep them engaged.",
             "assets":"other"

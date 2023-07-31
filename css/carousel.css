@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Abel");
-.projects-contents--mobile {
+.info-contents {
   height: 100%;
   width: 100%;
   display: flex;
@@ -8,14 +8,14 @@
   align-items: center;
 }
 
-.projects-contents__projects {
+.info-contents__infos {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.projects-contents__project {
+.info-contents__info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,7 +23,7 @@
   gap: 10px;
 }
 
-.projects-contents__project__title {
+.infos-contents__info__title {
   font-family: "Abel";
   font-size: 64px;
   text-align: center;
@@ -32,7 +32,15 @@
   color: #FFFFFF;
 }
 
-.project-contents__project__description {
+.infos-contents__info__subtitle {
+  font-family: "Abel";
+  font-size: 30px;
+  text-align: center;
+  text-decoration-thickness: from-font;
+  color: #FFFFFF;
+}
+
+.info-contents__info__description {
   font-family: "Abel";
   font-style: normal;
   font-size: 24px;
@@ -127,4 +135,4 @@
   }
 }
 
-/*# sourceMappingURL=projects.css.map */
+/*# sourceMappingURL=carousel.css.map */
