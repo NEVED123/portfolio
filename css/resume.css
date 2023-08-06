@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Jura");
+.resume-text {
+  font-family: "Jura";
+  font-size: 36px;
+  color: white;
+}
+
+.resume-image {
+  max-height: 80vh;
+  max-width: 60vh;
+  padding: 0px 0px 0px 30px;
+}
+
+.resume-flex {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/*# sourceMappingURL=resume.css.map */
