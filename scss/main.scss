@@ -4,6 +4,8 @@
 
 *{
     box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 }
 html,body{
     height:1000%;
