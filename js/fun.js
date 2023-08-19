@@ -25,6 +25,8 @@ let notes = [
     "Fsharp5",
     "G5"];
 
+let orange, red, yellow, blue, purple, green, lightblue;
+
 function initializePhysics() {
     console.log("Initializing Physics Engine")
     
@@ -41,17 +43,20 @@ var funPage = document.getElementsByClassName("physics")[0];
 
 // create a renderer
 var render = Render.create({
+    height: 200,
+    width: 200,
     element: funPage,
-    engine: engine
+    engine: engine,
+    options: {
+        wireframes: false
+      }
 });
 
-// create two boxes and a ground
-var boxA = Bodies.circle(400, 200, 80);
-var boxB = Bodies.circle(450, 50, 80);
+var orange = Bodies.circle(400, 200, 80, {render: {fillstyle: '#FF8A00'}});
 var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
 
 // add all of the bodies to the world
-Composite.add(engine.world, [boxA, boxB, ground]);
+Composite.add(engine.world, [orange, ground]);
 
 // run the renderer
 Render.run(render);
@@ -71,16 +76,12 @@ function initializePiano() {
 
         const noteElement = document.getElementById(noteName)
 
-        const startEvents = ["mousedown", "mouseenter"]
+        const startEvents = ["touchstart","click", "mousedown", "mouseenter"]
 
-        startEvents.forEach(function(e){
-            noteElement.addEventListener(e, (event)=>{
-
-                if(noteName.includes("sharp")){
-                    event.stopPropagation()
-                }
-                
-                if(e == "mouseenter" && event.buttons == 1 || e == "mousedown"){
+        startEvents.forEach(function(mouseEvent){
+            noteElement.addEventListener(mouseEvent, (event)=>{
+                event.stopPropagation()
+                if(mouseEvent == "mouseenter" && event.buttons == 1 || mouseEvent == "mousedown"){
                     audio.play()
                 }  
             })
@@ -88,8 +89,9 @@ function initializePiano() {
 
         const cancelEvents = ["mouseup", "mouseout"]
 
-        cancelEvents.forEach(function(e){
-            noteElement.addEventListener(e, ()=>{
+        cancelEvents.forEach(function(mouseEvent){
+            noteElement.addEventListener(mouseEvent, (event)=>{
+                event.stopPropagation()
                 audio.pause()
                 audio.load()
             })

@@ -14,35 +14,202 @@
 }
 
 .keyboard-keys {
+  position: relative;
   width: 90%;
   height: 80%;
   background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1px;
 }
 
-.keyboard-keys__key-white, .keyboard-keys__key-white:hover {
-  position: relative;
-  width: 8.33%;
+.keyboard-keys__key-white:nth-child(1) {
+  position: absolute;
   height: 100%;
+  width: 8.333%;
+  left: calc(0% + 0px);
   background: white;
   border-bottom: 10px solid #E5E5E5;
 }
 
-.keyboard-keys__key-white:hover {
-  box-shadow: 0px 5px 0 10px #E5E5E5 inset;
+.keyboard-keys__key-white:nth-child(3) {
+  position: absolute;
+  height: 100%;
+  width: 8.333%;
+  left: calc(8.333% + 1px);
+  background: white;
+  border-bottom: 10px solid #E5E5E5;
 }
 
-.keyboard-keys__key-black, .keyboard-keys__key-black:hover {
+.keyboard-keys__key-white:nth-child(5) {
   position: absolute;
-  width: 64%;
+  height: 100%;
+  width: 8.333%;
+  left: calc(16.666% + 2px);
+  background: white;
+  border-bottom: 10px solid #E5E5E5;
+}
+
+.keyboard-keys__key-white:nth-child(6) {
+  position: absolute;
+  height: 100%;
+  width: 8.333%;
+  left: calc(24.999% + 3px);
+  background: white;
+  border-bottom: 10px solid #E5E5E5;
+}
+
+.keyboard-keys__key-white:nth-child(8) {
+  position: absolute;
+  height: 100%;
+  width: 8.333%;
+  left: calc(33.332% + 4px);
+  background: white;
+  border-bottom: 10px solid #E5E5E5;
+}
+
+.keyboard-keys__key-white:nth-child(10) {
+  position: absolute;
+  height: 100%;
+  width: 8.333%;
+  left: calc(41.665% + 5px);
+  background: white;
+  border-bottom: 10px solid #E5E5E5;
+}
+
+.keyboard-keys__key-white:nth-child(12) {
+  position: absolute;
+  height: 100%;
+  width: 8.333%;
+  left: calc(49.998% + 6px);
+  background: white;
+  border-bottom: 10px solid #E5E5E5;
+}
+
+.keyboard-keys__key-white:nth-child(13) {
+  position: absolute;
+  height: 100%;
+  width: 8.333%;
+  left: calc(58.331% + 7px);
+  background: white;
+  border-bottom: 10px solid #E5E5E5;
+}
+
+.keyboard-keys__key-white:nth-child(15) {
+  position: absolute;
+  height: 100%;
+  width: 8.333%;
+  left: calc(66.664% + 8px);
+  background: white;
+  border-bottom: 10px solid #E5E5E5;
+}
+
+.keyboard-keys__key-white:nth-child(17) {
+  position: absolute;
+  height: 100%;
+  width: 8.333%;
+  left: calc(74.997% + 9px);
+  background: white;
+  border-bottom: 10px solid #E5E5E5;
+}
+
+.keyboard-keys__key-white:nth-child(18) {
+  position: absolute;
+  height: 100%;
+  width: 8.333%;
+  left: calc(83.33% + 10px);
+  background: white;
+  border-bottom: 10px solid #E5E5E5;
+}
+
+.keyboard-keys__key-white:nth-child(20) {
+  position: absolute;
+  height: 100%;
+  width: 8.333%;
+  left: calc(91.663% + 11px);
+  background: white;
+  border-bottom: 10px solid #E5E5E5;
+}
+
+.keyboard-keys__key-black:nth-child(2) {
+  position: absolute;
+  width: 5.303%;
   height: 60%;
-  right: -25%;
+  left: calc(5.718% + 1px);
   background: black;
   z-index: 100;
   border-bottom: 10px solid #232323;
+}
+
+.keyboard-keys__key-black:nth-child(4) {
+  position: absolute;
+  width: 5.303%;
+  height: 60%;
+  left: calc(14.051% + 2px);
+  background: black;
+  z-index: 100;
+  border-bottom: 10px solid #232323;
+}
+
+.keyboard-keys__key-black:nth-child(7) {
+  position: absolute;
+  width: 5.303%;
+  height: 60%;
+  left: calc(30.717% + 4px);
+  background: black;
+  z-index: 100;
+  border-bottom: 10px solid #232323;
+}
+
+.keyboard-keys__key-black:nth-child(9) {
+  position: absolute;
+  width: 5.303%;
+  height: 60%;
+  left: calc(39.05% + 5px);
+  background: black;
+  z-index: 100;
+  border-bottom: 10px solid #232323;
+}
+
+.keyboard-keys__key-black:nth-child(11) {
+  position: absolute;
+  width: 5.303%;
+  height: 60%;
+  left: calc(47.383% + 6px);
+  background: black;
+  z-index: 100;
+  border-bottom: 10px solid #232323;
+}
+
+.keyboard-keys__key-black:nth-child(14) {
+  position: absolute;
+  width: 5.303%;
+  height: 60%;
+  left: calc(64.049% + 8px);
+  background: black;
+  z-index: 100;
+  border-bottom: 10px solid #232323;
+}
+
+.keyboard-keys__key-black:nth-child(16) {
+  position: absolute;
+  width: 5.303%;
+  height: 60%;
+  left: calc(72.382% + 9px);
+  background: black;
+  z-index: 100;
+  border-bottom: 10px solid #232323;
+}
+
+.keyboard-keys__key-black:nth-child(19) {
+  position: absolute;
+  width: 5.303%;
+  height: 60%;
+  left: calc(89.048% + 11px);
+  background: black;
+  z-index: 100;
+  border-bottom: 10px solid #232323;
+}
+
+.keyboard-keys__key-white:hover {
+  box-shadow: 0px 5px 0 10px #E5E5E5 inset;
 }
 
 .keyboard-keys__key-black:hover {
