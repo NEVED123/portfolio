@@ -25,47 +25,61 @@ let notes = [
     "Fsharp5",
     "G5"];
 
-let orange, red, yellow, blue, purple, green, lightblue;
+const ballColors = ['#FF8A00', '#FF0000', '#FFFF00', '#0000FF', '#FF00FF', '#00FF00', '#00FFFF']
+
+let balls = []
+
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+const worldWidth = .80 * vw;
+const worldHeight = .40 * vh;
 
 function initializePhysics() {
-    console.log("Initializing Physics Engine")
-    
+ 
     var Engine = Matter.Engine,
     Render = Matter.Render,
     Runner = Matter.Runner,
     Bodies = Matter.Bodies,
     Composite = Matter.Composite;
+    Body = Matter.Body;
 
-// create an engine
-var engine = Engine.create();
+    // create an engine
+    var engine = Engine.create();
 
-var funPage = document.getElementsByClassName("physics")[0];
+    var funPage = document.getElementsByClassName("physics")[0];
 
-// create a renderer
-var render = Render.create({
-    height: 200,
-    width: 200,
-    element: funPage,
-    engine: engine,
-    options: {
-        wireframes: false
-      }
-});
+    // create a renderer
+    var render = Render.create({
+        element: funPage,
+        engine: engine,
+        options: {
+            height: worldHeight,
+            width: worldWidth,
+            wireframes: false
+        }
+    });
 
-var orange = Bodies.circle(400, 200, 80, {render: {fillstyle: '#FF8A00'}});
-var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
+    ballColors.forEach((color, index)=>{
+        balls.push(Bodies.circle((worldWidth*(index / ballColors.length)) + 50, worldHeight-100, 40, {render: {fillstyle: color}}))
+    })
 
-// add all of the bodies to the world
-Composite.add(engine.world, [orange, ground]);
+    var ground = Bodies.rectangle(worldWidth/2, worldHeight, worldWidth, 20, { isStatic: true });
+    var rightWall = Bodies.rectangle(worldWidth, worldHeight / 2, 20, worldHeight, { isStatic: true});
+    var leftWall = Bodies.rectangle(0, worldHeight / 2, 20, worldHeight, { isStatic: true});
+    var ceiling = Bodies.rectangle(worldWidth/2, 0, worldWidth, 20, { isStatic: true });
 
-// run the renderer
-Render.run(render);
+    // add all of the bodies to the world
+    Composite.add(engine.world, [...balls, ground, rightWall, leftWall, ceiling]);
 
-// create runner
-var runner = Runner.create();
+    // run the renderer
+    Render.run(render);
 
-// run the engine
-Runner.run(runner, engine);
+    // create runner
+    var runner = Runner.create();
+
+    // run the engine
+    Runner.run(runner, engine);
 }
 
 function initializePiano() {
@@ -83,6 +97,7 @@ function initializePiano() {
                 event.stopPropagation()
                 if(mouseEvent == "mouseenter" && event.buttons == 1 || mouseEvent == "mousedown"){
                     audio.play()
+                    bounceBalls(i)
                 }  
             })
         })
@@ -100,19 +115,14 @@ function initializePiano() {
     }
 }
 
-// function fadeAudio(audio){
+function bounceBalls(noteIndex){
+    const clickedX = worldWidth * noteIndex / notes.length 
 
-//     let miliseconds = 0;
-//     const interval = 10;
-
-//     let fadeInterval = setInterval(()=>{
-//         audio.volume = parseFloat(audio.volume - .2).toPrecision(12)
-//         miliseconds += interval
-//         if(Math.floor(miliseconds) == 50){
-//             audio.pause()
-//             audio.volume = 1;
-//             audio.load()
-//             clearInterval(fadeInterval)
-//         }
-//     },interval)
-// }
+    console.log(clickedX)
+    balls.forEach((ball)=>{
+        console.log(ball.position.x)
+        if(Math.abs(ball.position.x - clickedX) < 100){
+            Body.setVelocity(ball, {x: (Math.random() * 2) - 1, y: -10})
+        }
+    })
+}
