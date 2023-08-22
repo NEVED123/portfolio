@@ -8,7 +8,7 @@
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 }
 html,body{
-    height:1000%;
+    height:max-content;
     width:100%;
     margin:0px;
     // gap:10px;
@@ -49,10 +49,21 @@ html,body{
     position: relative;
     width: 100vw;
     min-height: 100vh;
+    height: 100vh;
     max-height: fit-content;
     overflow-x: hidden;
     overflow-y: hidden;
     //background-color: rgba(0, 255, 255, 0.053); //<-FOR TESTING
+}
+
+.center{
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 /* NAVBAR STYLING */
 
