@@ -3,6 +3,8 @@
 .physics {
     width: 80vw;
     height: 40vh;
+    border-radius: 25px;
+    overflow: hidden;
 }
 
 .keyboard {
@@ -18,10 +20,12 @@
 
 .keyboard-keys {
     position: relative;
-    width: 90%;
+    width: calc(90% - 1px);
     height: 80%;
     background-color: black;
 }
+
+$whitekeyWidth : calc(8.333% - 1px);
 
 $whiteKeyNumbers: 1, 3, 5, 6, 8, 10, 12, 13, 15, 17, 18, 20;
 
@@ -32,8 +36,8 @@ $whiteKeyNumbers: 1, 3, 5, 6, 8, 10, 12, 13, 15, 17, 18, 20;
     .keyboard-keys__key-white:nth-child(#{$keyNumber}){
         position: absolute;
         height: 100%;
-        width: 8.333%;
-        left: calc(($i - 1 ) * 8.333% + ($i - 1) * 1px);
+        width: $whitekeyWidth;
+        left: calc(($i - 1 ) * $whitekeyWidth + ($i - 1) * 1px);
         background: white;
         border-bottom: 10px solid #E5E5E5;
     }
@@ -51,7 +55,7 @@ $blackKeyPosition: 1, 2, 4, 5, 6, 8, 9, 11;
         position: absolute;
         width: 5.303%;
         height: 60%;
-        left: calc(($keyPosition * 8.333%) - 2.615% + ($keyPosition * 1px));
+        left: calc(($keyPosition * $whitekeyWidth) - 2.615% + ($keyPosition * 1px));
         background: black;
         z-index: 100;
         border-bottom: 10px solid #232323;

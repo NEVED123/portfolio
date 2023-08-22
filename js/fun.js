@@ -29,13 +29,21 @@ const ballColors = ['#FF8A00', '#FF0000', '#FFFF00', '#0000FF', '#FF00FF', '#00F
 
 let balls = []
 
-const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+let bottom, rightWall, leftWall, ceiling, ground, grass;
 
-const worldWidth = .80 * vw;
-const worldHeight = .40 * vh;
+let currVw
+let currVh
+
+let worldWidth
+let worldHeight
 
 function initializePhysics() {
+
+    currVw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    currVh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+    worldWidth = .80 * currVw;
+    worldHeight = .40 * currVh;
  
     var Engine = Matter.Engine,
     Render = Matter.Render,
@@ -56,21 +64,30 @@ function initializePhysics() {
         options: {
             height: worldHeight,
             width: worldWidth,
-            wireframes: false
-        }
-    });
+            wireframes: false,
+            background: "#55E0FF",
+        }})
 
     ballColors.forEach((color, index)=>{
-        balls.push(Bodies.circle((worldWidth*(index / ballColors.length)) + 50, worldHeight-100, 40, {render: {fillstyle: color}}))
+        const options = {
+            render: {
+                fillStyle: color,
+            }
+        }
+
+        balls.push(Bodies.circle((worldWidth*(index / ballColors.length)) + 50, worldHeight-100, worldWidth/30, options))
     })
 
-    var ground = Bodies.rectangle(worldWidth/2, worldHeight, worldWidth, 20, { isStatic: true });
-    var rightWall = Bodies.rectangle(worldWidth, worldHeight / 2, 20, worldHeight, { isStatic: true});
-    var leftWall = Bodies.rectangle(0, worldHeight / 2, 20, worldHeight, { isStatic: true});
-    var ceiling = Bodies.rectangle(worldWidth/2, 0, worldWidth, 20, { isStatic: true });
+    const borderOptions = { isStatic: true, render: {fillStyle: '#662D35'}}
 
+    bottom = Bodies.rectangle(worldWidth/2, worldHeight, worldWidth * 10, 30, borderOptions);
+    rightWall = Bodies.rectangle(worldWidth, worldHeight / 2, 30, worldHeight, borderOptions);
+    leftWall = Bodies.rectangle(0, worldHeight / 2, 30, worldHeight, borderOptions);
+    ceiling = Bodies.rectangle(worldWidth/2, 0, worldWidth * 10, 30, borderOptions);
+    ground = Bodies.rectangle(worldWidth/2, worldHeight - 30, worldWidth * 10, 30, { isStatic: true, render: {fillStyle: '#605446'}});
+    grass = Bodies.rectangle(worldWidth/2, worldHeight - 45, worldWidth * 10, 10, { isStatic: true, render: {fillStyle: '#27A734'}});
     // add all of the bodies to the world
-    Composite.add(engine.world, [...balls, ground, rightWall, leftWall, ceiling]);
+    Composite.add(engine.world, [...balls, ground, grass, bottom, rightWall, leftWall, ceiling]);
 
     // run the renderer
     Render.run(render);
@@ -80,6 +97,41 @@ function initializePhysics() {
 
     // run the engine
     Runner.run(runner, engine);
+
+    //When window resizes, we must resize all elements accordingly
+    window.addEventListener('resize', () => { 
+
+        const newVw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        const newVh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+        const newWorldWidth = .80 * newVw;
+        const newWorldHeight = .40 * newVh;
+        
+        const xResizeRatio = newVw / currVw
+        const yResizeRatio = newVh / currVh
+
+        const xResizeDelta = newVw - currVw
+        const yResizeDelta = newVh - currVh
+
+        render.options.width = newWorldWidth
+        render.options.height = newWorldHeight
+
+        Body.translate(rightWall, {x : xResizeDelta * .80, y: yResizeDelta * .40})
+        Body.translate(bottom, {x : xResizeDelta * .80, y: yResizeDelta * .40})
+        Body.translate(ground, {x : xResizeDelta * .80, y: yResizeDelta * .40})
+        Body.translate(grass, {x : xResizeDelta * .80, y: yResizeDelta * .40})
+
+        balls.forEach((ball, index)=>{
+            Body.scale(ball, xResizeRatio, xResizeRatio)
+
+            const newPos = (newWorldWidth - 100)*((index + 1) / balls.length)
+            console.log(newPos)
+            Body.translate(ball, {x: newPos - ball.position.x, y: yResizeDelta * .40})
+        })
+
+        currVw = newVw
+        currVh = newVh
+    });
 }
 
 function initializePiano() {
