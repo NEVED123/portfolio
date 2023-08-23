@@ -157,6 +157,10 @@ html, body {
   display: none;
 }
 
+.glowing {
+  text-shadow: 0px 0px 10px white;
+}
+
 /* at max 900, navbar needs to compress */
 @media (max-width: 900px) {
   .navbar .navbar__item {
