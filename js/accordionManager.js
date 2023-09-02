@@ -19,15 +19,13 @@ function openElement(clickedDiv){
             if(child.id == current){
                 if(child.classList.contains('hidden')){
                     child.classList.remove('hidden')
-                    clickedDiv.scrollIntoView({block: 'center'})
                 }
                 else{
                     child.classList.add('hidden')
                 }
             }
             else{
-                    child.classList.add('hidden')
-
+                child.classList.add('hidden')
             }
 
         })
