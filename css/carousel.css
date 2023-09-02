@@ -41,6 +41,7 @@
   text-align: center;
   text-decoration-thickness: from-font;
   color: #FFFFFF;
+  animation: show-carousel 0.5s forwards;
 }
 
 .info-contents__info__description {

@@ -49,8 +49,8 @@ html,body{
     position: relative;
     width: 100vw;
     min-height: 100vh;
-    height: max-content;
-    max-height: max-content;
+    height: fit-content;
+    max-height: fit-content;
     overflow-x: hidden;
     overflow-y: hidden;
     //background-color: rgba(0, 255, 255, 0.053); //<-FOR TESTING
@@ -58,8 +58,6 @@ html,body{
 
 .center{
     position: relative;
-    min-height: 100%;
-    min-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

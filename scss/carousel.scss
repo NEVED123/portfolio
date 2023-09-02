@@ -45,6 +45,7 @@ $carousel-width--mobile: 80%;
     text-align: center;
     text-decoration-thickness: from-font;
     color: #FFFFFF;
+    animation: show-carousel .5s forwards;
 }
 
 .info-contents__info__description{

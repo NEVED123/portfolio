@@ -10,26 +10,31 @@ function openElement(clickedDiv){
 
     const groupElements = Array.from(groupParent.children)
 
-    //console.log(groupElements)
-
     groupElements.forEach((element)=>{
 
-        const children = Array.from(element.children)
+        const children = Array.from(element.querySelectorAll(':not( .always-visible'))
 
         children.forEach((child)=>{
             
-            if(!child.classList.contains('visible')){
-                if(child.id == current){
+            if(child.id == current){
+                if(child.classList.contains('hidden')){
                     child.classList.remove('hidden')
+                    clickedDiv.scrollIntoView({block: 'center'})
                 }
                 else{
-                    if(!child.classList.contains('hidden'))
                     child.classList.add('hidden')
                 }
             }
+            else{
+                    child.classList.add('hidden')
+
+            }
+
         })
 
     })
+
+    
 
 }
 

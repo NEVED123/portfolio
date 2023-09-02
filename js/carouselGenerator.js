@@ -31,8 +31,7 @@ async function parseProjects(projects){
 
         //create title for project
         const projectTitle = document.createElement('div')
-        projectTitle.setAttribute('class','infos-contents__info__title')
-        projectTitle.classList.add('class','visible')
+        projectTitle.setAttribute('class','infos-contents__info__title always-visible')
         projectTitle.setAttribute('id',carouselNumber.toString())
         projectTitle.setAttribute('onClick','openElement(this)')
         projectTitle.appendChild(document.createTextNode(category.name))
@@ -77,7 +76,7 @@ async function parseWork(work){
 
         //create title for project
         const workTitle = document.createElement('a')
-        workTitle.setAttribute('class','infos-contents__info__title visible')
+        workTitle.setAttribute('class','infos-contents__info__title always-visible')
         workTitle.setAttribute('id',carouselNumber.toString())
         workTitle.setAttribute('onClick','openElement(this)')
         workTitle.appendChild(document.createTextNode(category.name))
@@ -135,8 +134,7 @@ async function parseProjects(projects){
 
         //create title for project
         const title = document.createElement('div')
-        title.setAttribute('class','infos-contents__info__title')
-        title.classList.add('class','visible')
+        title.setAttribute('class','infos-contents__info__title always-visible')
         title.setAttribute('id',carouselNumber.toString())
         title.setAttribute('onClick','openElement(this)')
         title.appendChild(document.createTextNode(category.name))
@@ -181,8 +179,7 @@ async function parseAbout(abouts){
 
         //create title for project
         const title = document.createElement('div')
-        title.setAttribute('class','infos-contents__info__title')
-        title.classList.add('class','visible')
+        title.setAttribute('class','infos-contents__info__title always-visible')
         title.setAttribute('id',carouselNumber.toString())
         title.setAttribute('onClick','openElement(this)')
         title.appendChild(document.createTextNode(category.name))
@@ -217,12 +214,14 @@ async function generateCarousel(assetsPath, id){
     carouselFrame.setAttribute('id',id.toString())
 
     const leftArrow = document.createElement('a')
-    leftArrow.setAttribute('class', 'carousel__frame__arrow--left')
+    leftArrow.setAttribute('class', 'carousel__frame__arrow--left hidden')
+    leftArrow.setAttribute('id', id.toString())
     leftArrow.setAttribute('onClick', 'moveLeft(this)')
     leftArrow.appendChild(document.createTextNode('<'))
 
     const rightArrow = document.createElement('a')
-    rightArrow.setAttribute('class', 'carousel__frame__arrow--right')
+    rightArrow.setAttribute('class', 'carousel__frame__arrow--right hidden')
+    rightArrow.setAttribute('id', id.toString())
     rightArrow.setAttribute('onClick', 'moveRight(this)')
     rightArrow.appendChild(document.createTextNode('>'))
 
@@ -232,12 +231,12 @@ async function generateCarousel(assetsPath, id){
     await getFilePathsFromDirectory(assetsPath).then((paths)=>{
         
         paths.forEach((path)=>{
-            const image = generateCarouselImage(path)
+            const image = generateCarouselImage(path, id)
             carouselFrame.appendChild(image)
         })
 
         if(paths.length > 0){
-            const firstImage = generateCarouselImage(paths[0])
+            const firstImage = generateCarouselImage(paths[0], id)
             carouselFrame.appendChild(firstImage)
         }
     })
@@ -245,13 +244,15 @@ async function generateCarousel(assetsPath, id){
     return carouselFrame
 }
 
-function generateCarouselImage(src){
+function generateCarouselImage(src, id){
     const imageWrapper = document.createElement('div')
     imageWrapper.setAttribute('class', 'carousel__image-frame hidden')
+    imageWrapper.setAttribute('id', id.toString())
 
     const image = document.createElement('img')
     image.setAttribute('class', 'carousel__image hidden')
     image.setAttribute('src', src)
+    image.setAttribute('id', id.toString())
 
     imageWrapper.appendChild(image)
 
