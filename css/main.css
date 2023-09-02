@@ -50,8 +50,8 @@ html, body {
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  height: 100vh;
-  max-height: fit-content;
+  height: max-content;
+  max-height: max-content;
   overflow-x: hidden;
   overflow-y: hidden;
 }

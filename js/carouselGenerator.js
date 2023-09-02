@@ -76,7 +76,7 @@ async function parseWork(work){
         carousel.setAttribute('id',carouselNumber.toString())
 
         //create title for project
-        const workTitle = document.createElement('div')
+        const workTitle = document.createElement('a')
         workTitle.setAttribute('class','infos-contents__info__title visible')
         workTitle.setAttribute('id',carouselNumber.toString())
         workTitle.setAttribute('onClick','openElement(this)')
@@ -247,10 +247,10 @@ async function generateCarousel(assetsPath, id){
 
 function generateCarouselImage(src){
     const imageWrapper = document.createElement('div')
-    imageWrapper.setAttribute('class', 'carousel__image-frame')
+    imageWrapper.setAttribute('class', 'carousel__image-frame hidden')
 
     const image = document.createElement('img')
-    image.setAttribute('class', 'carousel__image')
+    image.setAttribute('class', 'carousel__image hidden')
     image.setAttribute('src', src)
 
     imageWrapper.appendChild(image)
