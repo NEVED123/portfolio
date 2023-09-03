@@ -3,6 +3,8 @@
   height: 40vh;
   border-radius: 25px;
   overflow: hidden;
+  transform: translateZ(0);
+  margin: 0px;
 }
 
 .keyboard {

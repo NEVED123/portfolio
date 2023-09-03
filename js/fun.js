@@ -37,14 +37,15 @@ let currVh
 let worldWidth
 let worldHeight
 
+let funPage
+
 function initializePhysics() {
 
-    currVw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-    currVh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    funPage = document.getElementsByClassName("physics")[0];
 
-    worldWidth = .80 * currVw;
-    worldHeight = .40 * currVh;
- 
+    worldWidth = funPage.offsetWidth
+    worldHeight = funPage.offsetHeight
+
     var Engine = Matter.Engine,
     Render = Matter.Render,
     Runner = Matter.Runner,
@@ -54,8 +55,6 @@ function initializePhysics() {
 
     // create an engine
     var engine = Engine.create();
-
-    var funPage = document.getElementsByClassName("physics")[0];
 
     // create a renderer
     var render = Render.create({
@@ -75,7 +74,7 @@ function initializePhysics() {
             }
         }
 
-        balls.push(Bodies.circle((worldWidth*(index / ballColors.length)) + 50, worldHeight-100, worldWidth/30, options))
+        balls.push(Bodies.circle((worldWidth*(index / ballColors.length)) + 1, worldHeight-100, worldWidth/30, options))
     })
 
     const borderOptions = { isStatic: true, render: {fillStyle: '#662D35'}}
@@ -98,14 +97,16 @@ function initializePhysics() {
     // run the engine
     Runner.run(runner, engine);
 
+    let canvas = funPage.querySelectorAll('canvas')[0]
+
+    canvas.height = worldHeight
+    canvas.width = worldWidth
+
     //When window resizes, we must resize all elements accordingly
     window.addEventListener('resize', () => { 
 
-        const newVw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-        const newVh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-
-        const newWorldWidth = .80 * newVw;
-        const newWorldHeight = .40 * newVh;
+        const newWorldWidth = funPage.innerWidth
+        const newWorldHeight = funPage.innerHeight
         
         const xResizeRatio = newVw / currVw
         const yResizeRatio = newVh / currVh
@@ -125,7 +126,6 @@ function initializePhysics() {
             Body.scale(ball, xResizeRatio, xResizeRatio)
 
             const newPos = (newWorldWidth - 100)*((index + 1) / balls.length)
-            console.log(newPos)
             Body.translate(ball, {x: newPos - ball.position.x, y: yResizeDelta * .40})
         })
 
@@ -146,6 +146,7 @@ function initializePiano() {
 
         startEvents.forEach(function(mouseEvent){
             noteElement.addEventListener(mouseEvent, (event)=>{
+                console.log('test')
                 event.stopPropagation()
                 if(mouseEvent == "mouseenter" && event.buttons == 1 || mouseEvent == "mousedown"){
                     audio.play()
@@ -154,7 +155,7 @@ function initializePiano() {
             })
         })
 
-        const cancelEvents = ["mouseup", "mouseout"]
+        const cancelEvents = ["touchend", "mouseup", "mouseout"]
 
         cancelEvents.forEach(function(mouseEvent){
             noteElement.addEventListener(mouseEvent, (event)=>{
@@ -178,3 +179,4 @@ function bounceBalls(noteIndex){
         }
     })
 }
+

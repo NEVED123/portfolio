@@ -2,8 +2,7 @@
     "categories":[
         {
             "name":"Education",
-            "description":"I am pursuing a B.S in Computer Science and a B.A in Piano Performance at Oakland University. This is a unique combination, and while it is a lot of work, I am extremely proud of what I have accomplished in both disciplines. My current GPA is 3.95, and I expect to graduate in 2025.",
-            "assets":"education"
+            "description":"I am pursuing a B.S in Computer Science and a B.A in Piano Performance at Oakland University. This is a unique combination, and while it is a lot of work, I am extremely proud of what I have accomplished in both disciplines. My current GPA is 3.95, and I expect to graduate in 2025."
         },
         {
             "name":"Music",
@@ -18,8 +17,7 @@
         },
         {
             "name":"Volunteer Work",
-            "description":"Our family has been fostering litters of kittens since 2018 through the Rejoyceful Animal Rescue. While it may seem easy and fun getting to take care of kittens, it is a lot of work to ensure that they stay healthy. It is extremely rewarding and worth the work to raise a kitten to be old enough to be adopted to a home knowing that it will be happy and healthy.",
-            "assets":"volunteer"
+            "description":"Our family has been fostering litters of kittens since 2018 through the Rejoyceful Animal Rescue. While it may seem easy and fun getting to take care of kittens, it is a lot of work to ensure that they stay healthy. It is extremely rewarding and worth the work to raise a kitten to be old enough to be adopted to a home knowing that it will be happy and healthy."
         }
     ]
 }

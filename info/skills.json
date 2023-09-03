@@ -2,15 +2,15 @@
     "categories":[
         {
             "name":"Languages",
-            "items":["JavaScript","TypeScript","HTML","CSS","Java","Python","C#","SQL"]
+            "items":["Dart","JavaScript","TypeScript","HTML","CSS","Java","Python","C#","SQL"]
         },
         {
             "name":"Front-end",
-            "items":["React", "React Native", "Bootstrap", "Sass", "JavaFX/FXML"]
+            "items":["Flutter", "React", "React Native", "Bootstrap", "Sass", "JavaFX/FXML"]
         },
         {
             "name":"Back-end",
-            "items":["Jest", "JUnit", "Node.js", "MySQL"]
+            "items":["Jest", "JUnit", "Node.js"]
         },
         {
             "name":"Tools",

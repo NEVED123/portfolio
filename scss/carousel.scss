@@ -102,15 +102,7 @@ $carousel-width--mobile: 80%;
     animation: hide-carousel .5s forwards;
 }
 
-%carousel__frame__arrow{
-    color: #CCCCCC;
-    font-size: large;
-    position: sticky;
-    z-index: 1000;
-    width: 0px;
-    font-family: 'Abel';
-    font-size: 50px
-}
+
 
 @media (max-width:450px){
     .carousel__frame__arrow{
@@ -142,18 +134,45 @@ $carousel-width--mobile: 80%;
         width: 0px;
         font-family: 'Abel';
         font-size: 35px;
+        left: calc(100% - 30px);    
+    }
+
+}
+
+@media (min-width:450px){
+    .carousel__frame__arrow{
+        color: #CCCCCC;
+        font-size: large;
+        position: sticky;
+        z-index: 1000;
+        width: 0px;
+        font-family: 'Abel';
+        font-size: 50px
+    }
+    .carousel__frame__arrow--left{
+        color: #CCCCCC;
+        font-size: large;
+        position: sticky;
+        z-index: 1000;
+        width: 0px;
+        font-family: 'Abel';
+        font-size: 50px;
+        left: 10px;
+    }
+      
+    .carousel__frame__arrow--right{
+        color: #CCCCCC;
+        font-size: large;
+        position: sticky;
+        z-index: 1000;
+        width: 0px;
+        font-family: 'Abel';
+        font-size: 50px;
+        left: calc(100% - 45px) 
     }
 }
 
-.carousel__frame__arrow--left{
-    @extend %carousel__frame__arrow;
-    left: 10px;
-}
-  
-.carousel__frame__arrow--right{
-    @extend %carousel__frame__arrow;  
-    left: calc(100% - 45px) 
-}
+
 
 @keyframes hide-carousel {
     0%{

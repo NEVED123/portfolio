@@ -96,16 +96,6 @@
   animation: hide-carousel 0.5s forwards;
 }
 
-.carousel__frame__arrow--right, .carousel__frame__arrow--left {
-  color: #CCCCCC;
-  font-size: large;
-  position: sticky;
-  z-index: 1000;
-  width: 0px;
-  font-family: "Abel";
-  font-size: 50px;
-}
-
 @media (max-width: 450px) {
   .carousel__frame__arrow {
     color: #CCCCCC;
@@ -134,16 +124,40 @@
     width: 0px;
     font-family: "Abel";
     font-size: 35px;
+    left: calc(100% - 30px);
   }
 }
-.carousel__frame__arrow--left {
-  left: 10px;
+@media (min-width: 450px) {
+  .carousel__frame__arrow {
+    color: #CCCCCC;
+    font-size: large;
+    position: sticky;
+    z-index: 1000;
+    width: 0px;
+    font-family: "Abel";
+    font-size: 50px;
+  }
+  .carousel__frame__arrow--left {
+    color: #CCCCCC;
+    font-size: large;
+    position: sticky;
+    z-index: 1000;
+    width: 0px;
+    font-family: "Abel";
+    font-size: 50px;
+    left: 10px;
+  }
+  .carousel__frame__arrow--right {
+    color: #CCCCCC;
+    font-size: large;
+    position: sticky;
+    z-index: 1000;
+    width: 0px;
+    font-family: "Abel";
+    font-size: 50px;
+    left: calc(100% - 45px);
+  }
 }
-
-.carousel__frame__arrow--right {
-  left: calc(100% - 45px);
-}
-
 @keyframes hide-carousel {
   0% {
     opacity: 100%;
