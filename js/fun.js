@@ -3,27 +3,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     initializePiano()
 })
 
-let notes = [
-    "C4", 
-    "Csharp4", 
-    "D4", 
-    "Dsharp4", 
-    "E4", 
-    "F4",
-    "Fsharp4",
-    "G4",
-    "Gsharp4",
-    "A4",
-    "Asharp4",
-    "B4",
-    "C5",
-    "Csharp5",
-    "D5",
-    "Dsharp5",
-    "E5",
-    "F5",
-    "Fsharp5",
-    "G5"];
+
 
 const ballColors = ['#FF8A00', '#FF0000', '#FFFF00', '#0000FF', '#FF00FF', '#00FF00', '#00FFFF']
 
@@ -134,44 +114,11 @@ function initializePhysics() {
     });
 }
 
-function initializePiano() {
-
-    for(let i = 0;i<notes.length; i++){
-        const noteName = notes[i];
-        const audio = new Audio(`../assets/sounds/${noteName}.mp3`)
-
-        const noteElement = document.getElementById(noteName)
-
-        const startEvents = ["touchstart","click", "mousedown", "mouseenter"]
-
-        startEvents.forEach(function(mouseEvent){
-            noteElement.addEventListener(mouseEvent, (event)=>{
-                console.log('test')
-                event.stopPropagation()
-                if(mouseEvent == "mouseenter" && event.buttons == 1 || mouseEvent == "mousedown"){
-                    audio.play()
-                    bounceBalls(i)
-                }  
-            })
-        })
-
-        const cancelEvents = ["touchend", "mouseup", "mouseout"]
-
-        cancelEvents.forEach(function(mouseEvent){
-            noteElement.addEventListener(mouseEvent, (event)=>{
-                event.stopPropagation()
-                audio.pause()
-                audio.load()
-            })
-        })  
-
-    }
-}
 
 function bounceBalls(noteIndex){
-    const clickedX = worldWidth * noteIndex / notes.length 
+    const clickedX = worldWidth * noteIndex / document.getElementsByClassName('keyboard-keys')[0].children.length
 
-    console.log(clickedX)
+    //console.log(clickedX)
     balls.forEach((ball)=>{
         console.log(ball.position.x)
         if(Math.abs(ball.position.x - clickedX) < 100){
@@ -179,4 +126,57 @@ function bounceBalls(noteIndex){
         }
     })
 }
+
+let buffers = [];
+
+const context = new AudioContext();
+
+async function initializePiano() {
+
+    const keys = Array.from(document.getElementsByClassName('keyboard-keys')[0].children)
+
+    keys.forEach((noteElement, i) => { 
+        const noteName = noteElement.id
+        const audioPath = `../assets/sounds/${noteName}.mp3`
+
+        fetch(audioPath)
+            .then(response => response.arrayBuffer())
+            .then(arrayBuffer => context.decodeAudioData(arrayBuffer))
+            .then((audioBuffer) => {
+
+                const startEvents = ["touchstart","click", "mousedown", "mouseenter"]
+
+                let source = context.createBufferSource();
+                source.buffer = audioBuffer;
+                source.connect(context.destination);
+
+                startEvents.forEach(function(mouseEvent){
+                    noteElement.addEventListener(mouseEvent, (event)=>{
+                        event.stopPropagation()
+                        if(mouseEvent == "mouseenter" && event.buttons == 1 || mouseEvent == "mousedown"){
+                            source.start();
+                            bounceBalls(i)
+                        }  
+                    })
+                })
+        
+                const cancelEvents = ["touchend", "mouseup", "mouseout"]
+        
+                cancelEvents.forEach(function(mouseEvent){
+                    noteElement.addEventListener(mouseEvent, (event)=>{
+                        event.stopPropagation()
+                        source = context.createBufferSource();
+                        source.buffer = audioBuffer;
+                        source.connect(context.destination);
+                    })
+                })  
+            })
+    })  
+}
+
+
+
+
+
+
 
